@@ -12,8 +12,8 @@ public class AttributeService extends BaseService {
     public Object get(String categoryId) {
         Endpoints endpoints = new Endpoints();
 
-        String Str = new String(endpoints.attributeList);
-        String strEndPoint = Str.replace("@categoryId", categoryId);
+        String str = endpoints.attributeList;
+        String strEndPoint = str.replace("@categoryId", categoryId);
 
         String url = this.getUrlWithoutSuppliers(strEndPoint);
         return this.request("GET", url, "");

@@ -1,5 +1,8 @@
 package org.trendyol.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.trendyol.config.Credentials;
 import org.trendyol.config.Endpoints;
 import org.trendyol.models.basemodels.BaseResponseModel;
@@ -43,7 +46,7 @@ public class BaseService {
         try {
 
             String usernamePass = credentials.getUsername() + ":" + credentials.getPassword();
-            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(usernamePass.getBytes()));
+            String basicAuth = "Basic " + Base64.getEncoder().encode(usernamePass.getBytes());
 
             URL url = new URL(endpoint);
             connection = (HttpURLConnection) url.openConnection();
@@ -101,6 +104,27 @@ public class BaseService {
                 + "}";
 
         return responseString;
+
+    }
+
+    public String getServiceData(Object data) {
+        JSONObject item = new JSONObject();
+        JSONArray items = new JSONArray();
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            String productJson = objectMapper.writeValueAsString(data);
+            item = new JSONObject(productJson);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        items.put(item);
+
+        JSONObject jsonData = new JSONObject();
+        jsonData.put("items", items);
+
+        return jsonData.toString();
     }
 
 }

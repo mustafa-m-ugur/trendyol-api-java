@@ -23,7 +23,7 @@ public class OrderService extends BaseService {
         String url = this.getUrlWithSupplier(endpoints.updatePackageStatus);
 
         String jsonData = orderTransferData(params);
-        return this.request("PUT", url, jsonData.toString());
+        return this.request("PUT", url, jsonData);
     }
 
     public String orderTransferData(Object data) {
