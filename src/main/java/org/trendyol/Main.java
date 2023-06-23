@@ -1,6 +1,5 @@
 package org.trendyol;
 
-
 import java.util.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,7 +15,7 @@ import org.trendyol.service.*;
 public class Main {
 
     public static void main(String[] args) {
-        Trendyol trendyol = new Trendyol("PQaYVlRK4kbsKUY90snR", "f2pmKHwlzR2CYUYa8I1U", 628246, false);
+        Trendyol trendyol = new Trendyol("", "", 0, false);
         ProductService productService = (ProductService) trendyol.product;
 
         ProductModel productModel = new ProductModel();
@@ -52,6 +51,7 @@ public class Main {
         productModel.setAttributes(attributes);
 
 
+
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             String productJson = objectMapper.writeValueAsString(productModel);
@@ -61,8 +61,6 @@ public class Main {
         } catch (Exception e) {
             e.getMessage();
         }
-
-
 
     }
 }
