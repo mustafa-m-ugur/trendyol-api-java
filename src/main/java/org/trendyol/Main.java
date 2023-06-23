@@ -15,7 +15,7 @@ import org.trendyol.service.*;
 public class Main {
 
     public static void main(String[] args) {
-        Trendyol trendyol = new Trendyol("", "", 0, false);
+        Trendyol trendyol = new Trendyol("**********", "*******", 000000, true);
         ProductService productService = (ProductService) trendyol.product;
 
         ProductModel productModel = new ProductModel();
@@ -50,17 +50,8 @@ public class Main {
         attributes.add(attribute);
         productModel.setAttributes(attributes);
 
+        System.out.println(productService.updateOrCreate(productModel, false));
 
-
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            String productJson = objectMapper.writeValueAsString(productModel);
-
-            System.out.println(productService.updateOrCreate(productJson, false));
-
-        } catch (Exception e) {
-            e.getMessage();
-        }
 
     }
 }
