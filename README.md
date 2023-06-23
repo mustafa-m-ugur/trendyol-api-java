@@ -41,4 +41,9 @@ Trendyol API Java Entegrasyonu
         productModel.setAttributes(attributes);
 
         System.out.println(productService.updateOrCreate(productModel, false));
+        
+        /*
+         checkBatchRequest 
+         * */
+        System.out.println(productService.checkBatchRequest("52bc3395-af26-4bc4-a855-fc8c156956b3-168752107"));
 ```

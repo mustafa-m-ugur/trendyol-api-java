@@ -9,11 +9,11 @@ public class AttributeService extends BaseService {
     }
 
     //categoryId is a string because str does not accept int value
-    public Object get(String $categoryId) {
+    public Object get(String categoryId) {
         Endpoints endpoints = new Endpoints();
 
         String Str = new String(endpoints.attributeList);
-        String strEndPoint = Str.replace("@categoryId", $categoryId);
+        String strEndPoint = Str.replace("@categoryId", categoryId);
 
         String url = this.getUrlWithoutSuppliers(strEndPoint);
         return this.request("GET", url, "");

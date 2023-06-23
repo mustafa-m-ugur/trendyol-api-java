@@ -30,6 +30,18 @@ public class ProductService extends BaseService {
         return this.request(method, url, jsonData.toString());
     }
 
+    public Object checkBatchRequest(String batchRequestId) {
+        Endpoints endpoints = new Endpoints();
+
+        String Str = new String(endpoints.checkBatchRequest);
+        String strEndPoint = Str.replace("@batchRequestId", batchRequestId);
+
+        String url = this.getUrlWithSupplier(strEndPoint);
+
+
+        return this.request("GET", url, "");
+    }
+
     public String transferData(Object data) {
         JSONObject item = new JSONObject();
         JSONArray items = new JSONArray();
