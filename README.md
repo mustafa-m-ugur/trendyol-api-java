@@ -2,7 +2,7 @@
 Trendyol API Java Entegrasyonu
 [README.md](..%2F..%2Fprojects%2Ftrendyol-php-api%2FREADME.md)
 
-## productTransfer
+## ProductService
 
 ```java
     Trendyol trendyol = new Trendyol("**********", "*******", 000000, true);
@@ -60,4 +60,29 @@ Trendyol API Java Entegrasyonu
         stockAndPriceUpdateRequestModel.setListPrice(100);
 
         System.out.println(productService.updateStockAndPriceTransfer(stockAndPriceUpdateRequestModel));
+```
+## OrderService
+
+```java
+
+OrderService orderService = (OrderService) trendyol.order;
+
+PackageStatusUpdateRequestModel packageStatusUpdateRequestModel = new PackageStatusUpdateRequestModel();
+PackageLine packageLine = new PackageLine();
+packageLine.setLineId(1);
+packageLine.setQuantity(1);
+
+List<PackageLine> packageLines = new ArrayList<>();
+packageLines.add(packageLine);
+
+packageStatusUpdateRequestModel.setLines(packageLines);
+
+PackageParams packageParams = new PackageParams();
+packageParams.setInvoiceNumber("123456");
+
+packageStatusUpdateRequestModel.setParams(packageParams);
+packageStatusUpdateRequestModel.setStatus("Picking");
+
+System.out.println(orderService.update(packageStatusUpdateRequestModel));
+
 ```
