@@ -46,4 +46,18 @@ Trendyol API Java Entegrasyonu
          checkBatchRequest 
          * */
         System.out.println(productService.checkBatchRequest("52bc3395-af26-4bc4-a855-fc8c156956b3-168752107"));
+
+        
+        /*
+         Stock and Price Update 
+         * */
+        
+        StockAndPriceUpdateRequestModel stockAndPriceUpdateRequestModel = new StockAndPriceUpdateRequestModel();
+
+        stockAndPriceUpdateRequestModel.setBarcode("100");
+        stockAndPriceUpdateRequestModel.setQuantity(100);
+        stockAndPriceUpdateRequestModel.setSalePrice(100);
+        stockAndPriceUpdateRequestModel.setListPrice(100);
+
+        System.out.println(productService.updateStockAndPriceTransfer(stockAndPriceUpdateRequestModel));
 ```

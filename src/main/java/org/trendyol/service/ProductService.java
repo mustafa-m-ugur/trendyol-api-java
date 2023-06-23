@@ -24,7 +24,7 @@ public class ProductService extends BaseService {
         Endpoints endpoints = new Endpoints();
         String url = this.getUrlWithSupplier(endpoints.version + "/" + endpoints.createProduct);
 
-        String jsonData = transferData(data);
+        String jsonData = productTransferData(data);
 
         String method = isUpdate ? "PUT" : "POST";
         return this.request(method, url, jsonData.toString());
@@ -42,7 +42,16 @@ public class ProductService extends BaseService {
         return this.request("GET", url, "");
     }
 
-    public String transferData(Object data) {
+    public Object updateStockAndPriceTransfer(Object data) {
+        Endpoints endpoints = new Endpoints();
+        String url = this.getUrlWithSupplier(endpoints.priceAndInventory);
+
+        String jsonData = productTransferData(data);
+
+        return this.request("POST", url, jsonData.toString());
+    }
+
+    public String productTransferData(Object data) {
         JSONObject item = new JSONObject();
         JSONArray items = new JSONArray();
 
