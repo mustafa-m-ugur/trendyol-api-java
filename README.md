@@ -1,5 +1,5 @@
 # trendyol-api-java
-Trendyol API Java Entegrasyonu
+Trendyol Marketplace API Integration With Java
 [README.md](..%2F..%2Fprojects%2Ftrendyol-php-api%2FREADME.md)
 
 ## ProductService
