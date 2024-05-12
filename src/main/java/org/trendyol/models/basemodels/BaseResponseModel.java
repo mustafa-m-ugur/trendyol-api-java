@@ -1,6 +1,5 @@
 package org.trendyol.models.basemodels;
 
-import org.trendyol.ToStringRequestBuilder;
 
 public class BaseResponseModel {
     private boolean status;
@@ -40,13 +39,4 @@ public class BaseResponseModel {
         this.response = response;
     }
 
-    @Override
-    public String toString() {
-        return new ToStringRequestBuilder(this)
-                .append("status", status)
-                .append("statusCode", statusCode)
-                .append("message", message)
-                .append("response", response)
-                .toString();
-    }
 }

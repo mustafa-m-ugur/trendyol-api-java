@@ -1,7 +1,4 @@
 package org.trendyol.models.requestmodels;
-
-import org.trendyol.ToStringRequestBuilder;
-
 public class PackageStatusUpdateRequestModel {
     public Object lines;
     public Object params;
@@ -31,12 +28,4 @@ public class PackageStatusUpdateRequestModel {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return new ToStringRequestBuilder(this)
-                .append("lines", lines)
-                .append("params", params)
-                .append("status", status)
-                .toString();
-    }
 }

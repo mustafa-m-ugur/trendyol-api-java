@@ -12,7 +12,6 @@ public class AddressListService extends BaseService {
         Endpoints endpoints = new Endpoints();
         String url = this.getUrlWithSupplier(endpoints.addresses);
 
-
         return this.request("GET", url, "");
     }
 

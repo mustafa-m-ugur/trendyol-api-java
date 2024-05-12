@@ -1,6 +1,5 @@
 package org.trendyol.models.basemodels;
 
-import org.trendyol.ToStringRequestBuilder;
 
 public class PackageLine {
 
@@ -23,11 +22,4 @@ public class PackageLine {
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return new ToStringRequestBuilder(this)
-                .append("lineId", lineId)
-                .append("quantity", quantity)
-                .toString();
-    }
 }

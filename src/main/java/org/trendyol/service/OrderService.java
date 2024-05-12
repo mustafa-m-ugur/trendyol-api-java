@@ -1,10 +1,9 @@
 package org.trendyol.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.google.gson.Gson;
 import org.trendyol.config.Credentials;
 import org.trendyol.config.Endpoints;
+import org.trendyol.models.requestmodels.OrderModel;
 
 public class OrderService extends BaseService {
 
@@ -18,32 +17,12 @@ public class OrderService extends BaseService {
         return this.request("GET", url, "");
     }
 
-    public Object update(Object params) {
+    public Object update(OrderModel params) {
         Endpoints endpoints = new Endpoints();
         String url = this.getUrlWithSupplier(endpoints.updatePackageStatus);
 
-        String jsonData = orderTransferData(params);
+        String jsonData = new Gson().toJson(params);
         return this.request("PUT", url, jsonData);
-    }
-
-    public String orderTransferData(Object data) {
-        JSONObject item = new JSONObject();
-        JSONArray items = new JSONArray();
-
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            String productJson = objectMapper.writeValueAsString(data);
-            item = new JSONObject(productJson);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        items.put(item);
-
-        JSONObject jsonData = new JSONObject();
-        jsonData.put("lines", items);
-
-        return item.toString();
     }
 
 }

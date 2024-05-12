@@ -1,6 +1,5 @@
 package org.trendyol.models.basemodels;
 
-import org.trendyol.ToStringRequestBuilder;
 
 public class Attribute {
 
@@ -32,12 +31,4 @@ public class Attribute {
         this.customAttributeValue = customAttributeValue;
     }
 
-    @Override
-    public String toString() {
-        return new ToStringRequestBuilder(this)
-                .append("attributeId", attributeId)
-                .append("attributeValueId", attributeValueId)
-                .append("customAttributeValue", customAttributeValue)
-                .toString();
-    }
 }

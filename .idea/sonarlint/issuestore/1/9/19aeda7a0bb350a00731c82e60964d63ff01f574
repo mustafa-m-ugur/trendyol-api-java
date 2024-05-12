@@ -1,0 +1,8 @@
+
+k	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿêÍ¬þÿÿÿÿ
+`
+java:S1858"K"jsonData" is already a string, there's no need to call "toString()" on it.(ÂŒÊ%
+;
+java:S2129$" Remove this "String" constructor(ÿêÍ¬þÿÿÿÿ
+f
+java:S18583"K"jsonData" is already a string, there's no need to call "toString()" on it.(öÐÌñÿÿÿÿÿ

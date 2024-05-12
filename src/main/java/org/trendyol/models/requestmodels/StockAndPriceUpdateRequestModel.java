@@ -1,7 +1,5 @@
 package org.trendyol.models.requestmodels;
 
-import org.trendyol.ToStringRequestBuilder;
-
 public class StockAndPriceUpdateRequestModel {
     public String barcode;
     public int quantity;
@@ -38,15 +36,5 @@ public class StockAndPriceUpdateRequestModel {
 
     public void setListPrice(double listPrice) {
         this.listPrice = listPrice;
-    }
-
-    @Override
-    public String toString() {
-        return new ToStringRequestBuilder(this)
-                .append("barcode", barcode)
-                .append("quantity", quantity)
-                .append("salePrice", salePrice)
-                .append("listPrice", listPrice)
-                .toString();
     }
 }
