@@ -1,4 +1,4 @@
-package org.trendyol.dto;
+package org.trendyol.dto.product;
 
 public class ProductImageDto {
     public String url;

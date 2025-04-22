@@ -1,4 +1,4 @@
-package org.trendyol.dto;
+package org.trendyol.dto.product;
 
 public class ProductItemDto {
     public String barcode;
@@ -130,19 +130,19 @@ public class ProductItemDto {
         this.cargoCompanyId = cargoCompanyId;
     }
 
-    public Object getImages() {
+    public ProductImageDto getImages() {
         return images;
     }
 
-    public void setImages(Object images) {
+    public void setImages(ProductImageDto images) {
         this.images = images;
     }
 
-    public Object getAttributes() {
+    public ProductAttributeDto getAttributes() {
         return attributes;
     }
 
-    public void setAttributes(Object attributes) {
+    public void setAttributes(ProductAttributeDto attributes) {
         this.attributes = attributes;
     }
 }

@@ -21,12 +21,18 @@ public class TrendyolClientImpl implements TrendyolClient {
         String basicAuth = "Basic " + Arrays.toString(Base64.getEncoder().encode(usernamePass.getBytes()));
         String userAgent = credentials.getSupplierId() + " - SelfIntegration";
 
-        HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .headers("Content-Type", "application/json", "Authorization", basicAuth, "User-Agent", userAgent)
-                .POST(HttpRequest.BodyPublishers.ofString(requestData)).build();
+        HttpRequest.Builder httpRequest = HttpRequest.newBuilder().uri(URI.create(url)).headers("Content-Type", "application/json", "Authorization", basicAuth, "User-Agent", userAgent);
 
-        HttpResponse<String> response = execute(httpRequest);
+        HttpRequest request = null;
+        if (method.equals("GET")) {
+            request = httpRequest.GET().build();
+        }
+
+        if (method.equals("POST")) {
+            request = httpRequest.POST(HttpRequest.BodyPublishers.ofString(requestData)).build();
+        }
+
+        HttpResponse<String> response = execute(request);
 
         BaseResponseDto responseModel = new BaseResponseDto();
         responseModel.setMessage("Success");
