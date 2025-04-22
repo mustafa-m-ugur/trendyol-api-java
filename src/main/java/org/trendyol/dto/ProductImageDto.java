@@ -1,7 +1,6 @@
-package org.trendyol.models.basemodels;
+package org.trendyol.dto;
 
-
-public class Image {
+public class ProductImageDto {
     public String url;
 
     public String getUrl() {

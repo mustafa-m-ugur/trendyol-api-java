@@ -1,7 +1,7 @@
-package org.trendyol.models.basemodels;
+package org.trendyol.dto;
 
 
-public class BaseResponseModel {
+public class BaseResponseDto {
     private boolean status;
     private int statusCode;
     private String message;

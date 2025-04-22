@@ -1,7 +1,7 @@
-package org.trendyol.models.basemodels;
+package org.trendyol.dto;
 
 
-public class Attribute {
+public class ProductAttributeDto {
 
     public String attributeId;
     public String attributeValueId;

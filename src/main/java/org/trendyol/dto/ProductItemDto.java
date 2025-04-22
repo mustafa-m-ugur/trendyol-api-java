@@ -1,6 +1,6 @@
-package org.trendyol.models.requestmodels;
+package org.trendyol.dto;
 
-public class ProductItemModel {
+public class ProductItemDto {
     public String barcode;
     public String title;
     public String productMainId;
@@ -15,8 +15,8 @@ public class ProductItemModel {
     public Double salePrice;
     public Double vatRate;
     public Integer cargoCompanyId;
-    public Object images;
-    public Object attributes;
+    public ProductImageDto images;
+    public ProductAttributeDto attributes;
 
     public String getBarcode() {
         return barcode;
